@@ -1,0 +1,57 @@
+{
+  "name": "smallest-power-of-two",
+  "version": "0.0.0",
+  "description": "Find the smallest power of 2 with magnitude greater than or equal to input unless 0",
+  "main": "src/smallest-power-of-two",
+  "types": "src/smallest-power-of-two.d.ts",
+  "scripts": {
+    "repl": "ts-node repl",
+    "format": "prettier --write \"**/*.@(ts|js?(on)|md|prettierrc|clang-format|yml)\"",
+    "ci": "yarn test --ci && yarn coveralls",
+    "test": "jest --passWithNoTests",
+    "clean": "rm src/smallest-power-of-two.js src/smallest-power-of-two.d.ts",
+    "coveralls": "coveralls < coverage/lcov.info",
+    "preversion": "yarn format && yarn test",
+    "postversion": "npm publish",
+    "build": "tsc --declaration",
+    "setup": "yarn install --dev && install-vscode-extensions",
+    "prepublishOnly": "yarn build",
+    "postpublish": "git push origin master --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cinderblock/smallest-power-of-two.git"
+  },
+  "keywords": [
+    "power",
+    "two",
+    "2",
+    "memory",
+    "buffer",
+    "size"
+  ],
+  "files": [
+    "src/smallest-power-of-two.js",
+    "src/smallest-power-of-two.ts",
+    "src/smallest-power-of-two.d.ts"
+  ],
+  "author": "Cameron Tacklind <cameron@tacklind.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cinderblock/smallest-power-of-two/issues"
+  },
+  "homepage": "https://github.com/cinderblock/smallest-power-of-two#readme",
+  "devDependencies": {
+    "@types/jest": "^23.3.9",
+    "@types/node": "^10.12.9",
+    "coveralls": "^3.0.2",
+    "install-vscode-extensions": "^1.0.0",
+    "jest": "^23.6.0",
+    "jest-junit": "^5.2.0",
+    "prettier": "^1.15.2",
+    "ts-jest": "^23.10.4",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.6",
+    "yarn": "^1.12.3"
+  }
+}

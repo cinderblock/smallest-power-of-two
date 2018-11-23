@@ -1,0 +1,11 @@
+{
+  "files": ["src/smallest-power-of-two.ts"],
+  "compilerOptions": {
+    // "target": "es5",
+    "module": "commonjs",
+    "lib": ["es2015"],
+    // Enable all strict type-checking options.
+    "strict": true,
+    "esModuleInterop": true
+  }
+}
