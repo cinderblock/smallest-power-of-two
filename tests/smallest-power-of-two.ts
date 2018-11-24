@@ -30,6 +30,7 @@ test('Called with no arguments', () => {
   true,
   null,
   {},
+  [],
 ].forEach(v =>
   test('Called with invalid argument: ' + typeof v, () => {
     const f = smallestPowerOfTwo as (f: any) => number;
