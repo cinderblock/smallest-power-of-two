@@ -24,3 +24,9 @@ test('Called with no arguments', () => {
     expect(smallestPowerOfTwo(<number>input)).toEqual(output);
   })
 );
+
+test('Called with invalid argument', () => {
+  const f = smallestPowerOfTwo as (f: any) => number;
+  const v = 'test';
+  expect(() => f(v)).toThrowError(TypeError('Invalid type: ' + typeof v));
+});
