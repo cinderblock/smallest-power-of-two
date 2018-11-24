@@ -8,3 +8,10 @@ test('Called with no arguments', () => {
   const f = smallestPowerOfTwo as () => number;
   expect(f).toThrowError(TypeError('Invalid type: undefined'));
 });
+
+[
+].forEach(([input, output, msg]) =>
+  test(<string>msg || input + ' => ' + output, () => {
+    expect(smallestPowerOfTwo(<number>input)).toEqual(output);
+  })
+);
