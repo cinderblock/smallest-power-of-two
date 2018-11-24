@@ -13,6 +13,7 @@ test('Called with no arguments', () => {
   [0, 0, 'Zero'],
   [-0, 0, 'Negative Zero'],
   [1, 1],
+  [2, 2],
 ].forEach(([input, output, msg]) =>
   test(<string>msg || input + ' => ' + output, () => {
     expect(smallestPowerOfTwo(<number>input)).toEqual(output);
