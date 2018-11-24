@@ -25,15 +25,7 @@ test('Called with no arguments', () => {
   })
 );
 
-[
-  'test',
-  true,
-  null,
-  {},
-  [],
-  undefined,
-  Symbol(),
-].forEach(v =>
+['test', true, null, {}, [], undefined, Symbol()].forEach(v =>
   test('Called with invalid argument: ' + typeof v, () => {
     const f = smallestPowerOfTwo as (f: any) => number;
     expect(() => f(v)).toThrowError(TypeError('Invalid type: ' + typeof v));
