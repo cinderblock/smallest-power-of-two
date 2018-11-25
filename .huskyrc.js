@@ -1,5 +1,5 @@
 module.exports = {
   hooks: {
-    'pre-commit': 'yarn preversion',
+    'pre-commit': 'yarn git-pre-commit',
   },
 };
