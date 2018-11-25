@@ -10,5 +10,6 @@
     "tacklind",
     "typecode"
   ],
-  "flagWords": []
+  "ignorePaths": ["coverage/**"],
+  "allowCompoundWords": true
 }
