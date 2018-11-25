@@ -15,7 +15,7 @@
     "preversion": "yarn checks",
     "postversion": "npm publish",
     "build": "tsc --declaration",
-    "ci": "yarn preversion --ci",
+    "ci": "yarn checks --ci",
     "postci": "yarn coveralls",
     "coveralls": "coveralls < coverage/lcov.info",
     "setup": "yarn install --dev",
