@@ -32,5 +32,5 @@ export default function smallestPowerOfTwo(lowerBound: number): number {
 
   // toString converts to a binary string representing the needed value
   // The length of that string is the power we need!
-  return 1 << (lowerBound - 1).toString(2).length;
+  return 2 ** (lowerBound - 1).toString(2).length;
 }
