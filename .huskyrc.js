@@ -1,5 +1,5 @@
 module.exports = {
   hooks: {
-    'commit-msg': 'yarn git-pre-commit',
+    'commit-msg': 'cspell .git/COMMIT_EDITMSG',
   },
 };
