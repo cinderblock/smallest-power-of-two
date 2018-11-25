@@ -1,5 +1,5 @@
 module.exports = {
   hooks: {
-    'pre-commit': 'yarn spellcheck',
+    'pre-commit': 'yarn preversion',
   },
 };
