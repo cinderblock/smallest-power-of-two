@@ -15,8 +15,7 @@
     "coverage/**",
     "yarn.lock",
     ".git/!(COMMIT_EDITMSG)/**",
-    ".git/config",
-    ".git/index"
+    ".git/!(COMMIT_EDITMSG)"
   ],
   "allowCompoundWords": true
 }
