@@ -8,7 +8,7 @@
     "repl": "ts-node repl",
     "format": "prettier --write \"**/*.@(ts|js?(on)|md|prettierrc|clang-format|yml)\"",
     "format-check": "prettier --list-different \"**/*.@(ts|js?(on)|md|prettierrc|clang-format|yml)\"",
-    "spellcheck": "cspell \"**/*.@(ts|js?(on)|md|prettierrc|clang-format|yml)\"",
+    "spellcheck": "cspell \".*/**\" \"**\"",
     "clean": "rm -f src/smallest-power-of-two.js src/smallest-power-of-two.d.ts",
     "test": "jest",
     "preversion": "yarn format-check && yarn spellcheck && yarn test",

@@ -11,6 +11,6 @@
     "prettierrc",
     "tacklind"
   ],
-  "ignorePaths": ["coverage/**"],
+  "ignorePaths": ["coverage/**", "yarn.lock", ".git/**"],
   "allowCompoundWords": true
 }
