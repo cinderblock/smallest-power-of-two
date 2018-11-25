@@ -11,6 +11,12 @@
     "prettierrc",
     "tacklind"
   ],
-  "ignorePaths": ["coverage/**", "yarn.lock", ".git/!(COMMIT_EDITMSG)"],
+  "ignorePaths": [
+    "coverage/**",
+    "yarn.lock",
+    ".git/!(COMMIT_EDITMSG)/**",
+    ".git/config",
+    ".git/index"
+  ],
   "allowCompoundWords": true
 }
