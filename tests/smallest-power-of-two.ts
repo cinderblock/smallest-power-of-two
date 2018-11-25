@@ -34,3 +34,21 @@ test('Called with no arguments', () => {
     expect(() => f(v)).toThrowError(TypeError('Invalid type: ' + typeof v));
   })
 );
+
+for (let i = 1; i < 2 ** 31; i *= 2) {
+  const t = i;
+  test(`Test power of two to return itself. ${t}`, () => {
+    expect(smallestPowerOfTwo(t)).toEqual(t);
+  });
+  test(`Test negative power of two to return itself. ${-t}`, () => {
+    expect(smallestPowerOfTwo(-t)).toEqual(-t);
+  });
+  const next = i * 2;
+  const t1 = t + 1;
+  test(`Test power of two plus 1 to return next power of two. ${t1} => ${next}`, () => {
+    expect(smallestPowerOfTwo(t1)).toEqual(next);
+  });
+  test(`Test negative power of two plus 1 to return next power of two. ${-t1} => ${-next}`, () => {
+    expect(smallestPowerOfTwo(-t1)).toEqual(-next);
+  });
+}
