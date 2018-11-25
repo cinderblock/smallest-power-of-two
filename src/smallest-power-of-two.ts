@@ -27,10 +27,8 @@ export default function smallestPowerOfTwo(lowerBound: number): number {
   // Coerce to integer
   lowerBound = Math.ceil(lowerBound);
 
-  // Handle 1 which isn't quite handled properly by the fancy toString(2) base method below
-  if (lowerBound === 1) return 1;
-
-  // toString converts to a binary string representing the needed value
-  // The length of that string is the power we need!
-  return 2 ** (lowerBound - 1).toString(2).length;
+  // Find our result
+  let i = 1;
+  while (lowerBound > i) i *= 2;
+  return i;
 }
