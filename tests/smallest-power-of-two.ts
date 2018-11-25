@@ -35,7 +35,8 @@ test('Called with no arguments', () => {
   })
 );
 
-for (let i = 1; i < 2 ** 31; i *= 2) {
+// Tests start to fail past 2 ** 53
+for (let i = 1; i <= Number.MAX_SAFE_INTEGER /*/ + 1 /**/; i *= 2) {
   const t = i;
   test(`Test power of two to return itself. ${t}`, () => {
     expect(smallestPowerOfTwo(t)).toEqual(t);
