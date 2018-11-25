@@ -19,6 +19,9 @@ test('Called with no arguments', () => {
   // Test Floats
   [0.1, 1],
   [1.1, 2],
+  // Test bigger numbers
+  [124, 128],
+  [912874, 0x100000],
 ].forEach(([input, output, msg]) =>
   test(<string>msg || input + ' => ' + output, () => {
     expect(smallestPowerOfTwo(<number>input)).toEqual(output);
