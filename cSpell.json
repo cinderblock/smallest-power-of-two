@@ -3,12 +3,13 @@
   "language": "en",
   "words": [
     "cinderblock",
-    "postpublish",
-    "postversion",
+    "circleci",
+    "interop",
+    "junit",
+    "lcov",
+    "postci",
     "prettierrc",
-    "preversion",
-    "tacklind",
-    "typecode"
+    "tacklind"
   ],
   "ignorePaths": ["coverage/**"],
   "allowCompoundWords": true
