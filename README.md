@@ -4,7 +4,7 @@
 
 Simple library to find the smallest power of 2 with magnitude greater than or equal to input, unless 0.
 
-No nondev dependencies.
+No non-dev dependencies.
 
 ## Usage
 
