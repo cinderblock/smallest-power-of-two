@@ -33,7 +33,7 @@ jobs:
         run: node --version
 
       - name: Install Needed Dependencies
-        run: npm install jest jest-junit ts-jest prettier
+        run: npm install jest jest-junit ts-jest prettier typescript
 
       - name: Install Spellchecker
         if: matrix.node >= 10
