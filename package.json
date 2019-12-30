@@ -37,7 +37,6 @@
   ],
   "files": [
     "src/smallest-power-of-two.js",
-    "src/smallest-power-of-two.ts",
     "src/smallest-power-of-two.d.ts"
   ],
   "author": "Cameron Tacklind <cameron@tacklind.com>",
