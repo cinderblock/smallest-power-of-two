@@ -30,4 +30,4 @@ jobs:
       # Ensure our python dependencies are loaded and run ci!
       - run: yarn ci
       - store_test_results:
-          path: test-results
+          path: junit.xml

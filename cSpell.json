@@ -12,12 +12,13 @@
     "tacklind"
   ],
   "ignorePaths": [
-    "coverage/**",
-    "yarn.lock",
-    "src/smallest-power-of-two.d.ts",
-    "src/smallest-power-of-two.js",
-    ".git/!(COMMIT_EDITMSG)/**",
-    ".git/!(COMMIT_EDITMSG)"
+    "**/coverage/**",
+    "**/node_modules/**",
+    "**/yarn.lock",
+    "**/src/smallest-power-of-two.d.ts",
+    "**/src/smallest-power-of-two.js",
+    "**/.git/!(COMMIT_EDITMSG)/**",
+    "**/.git/!(COMMIT_EDITMSG)"
   ],
   "allowCompoundWords": true
 }
