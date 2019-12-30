@@ -13,15 +13,13 @@
     "clean": "rm -f src/smallest-power-of-two.js src/smallest-power-of-two.d.ts",
     "test": "jest",
     "preversion": "yarn checks",
-    "postversion": "npm publish",
     "build": "tsc --declaration",
     "ci": "yarn checks --ci",
     "postci": "yarn coveralls",
     "coveralls": "coveralls < coverage/lcov.info",
     "setup": "yarn install --dev",
     "postsetup": "install-vscode-extensions",
-    "prepublishOnly": "yarn build",
-    "postpublish": "git push origin master --tags"
+    "prepare": "yarn build"
   },
   "repository": {
     "type": "git",
