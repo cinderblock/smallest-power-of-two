@@ -24,7 +24,7 @@ test('Called with no arguments', () => {
   [912874, 0x100000],
 ].forEach(([input, output, msg]) =>
   test(<string>msg || input + ' => ' + output, () => {
-    expect(smallestPowerOfTwo(<number>input)).toEqual(output);
+    expect(smallestPowerOfTwo(input as number)).toEqual(output);
   })
 );
 
