@@ -1,7 +1,6 @@
 # smallest-power-of-two
 
 [![](https://github.com/cinderblock/smallest-power-of-two/workflows/Main/badge.svg) ![](https://github.com/cinderblock/smallest-power-of-two/workflows/Test%20All%20Versions/badge.svg)](https://github.com/cinderblock/smallest-power-of-two/actions)
-[![CircleCI](https://circleci.com/gh/cinderblock/smallest-power-of-two.svg?style=svg)](https://circleci.com/gh/cinderblock/smallest-power-of-two)
 [![Coverage Status](https://coveralls.io/repos/github/cinderblock/smallest-power-of-two/badge.svg?branch=master)](https://coveralls.io/github/cinderblock/smallest-power-of-two?branch=master)
 
 Simple library to find the smallest power of 2 with magnitude greater than or equal to input, unless 0.
