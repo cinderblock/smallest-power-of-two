@@ -33,7 +33,7 @@ jobs:
         run: node --version
 
       - name: Build
-        run: yarn install jest jest-junit ts-jest
+        run: yarn add jest jest-junit ts-jest
 
       - name: Test
         run: yarn checks --ci
