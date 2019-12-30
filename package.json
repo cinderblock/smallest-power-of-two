@@ -14,7 +14,7 @@
     "test": "jest",
     "preversion": "yarn checks",
     "build": "tsc --declaration",
-    "ci": "yarn checks --ci",
+    "ci": "yarn checks --ci --coverage",
     "postci": "yarn coveralls",
     "coveralls": "coveralls < coverage/lcov.info",
     "setup": "yarn install --dev",

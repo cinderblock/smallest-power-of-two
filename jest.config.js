@@ -5,7 +5,6 @@ module.exports = {
   clearMocks: true,
   coverageDirectory: 'coverage',
   testEnvironment: 'node',
-  collectCoverage: true,
   transform: { '^.+\\.tsx?$': 'ts-jest' },
   testRegex: '(/tests/.*)\\.tsx?$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],

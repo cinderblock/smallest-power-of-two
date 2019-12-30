@@ -88,8 +88,8 @@ jobs:
       - name: 'Debug: List post build files'
         run: find * \( -path node_modules -o -path .git \) -print -prune -o -type f -print | tee /tmp/build.list
 
-      - name: Test Coverage
-        run: yarn run coverage
+      - name: Test with Coverage
+        run: yarn run test --coverage
 
       - name: 'Debug: List post Coverage files'
         run: find * \( -path node_modules -o -path .git \) -print -prune -o -type f -print | tee /tmp/coverage.list
