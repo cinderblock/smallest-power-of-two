@@ -7,6 +7,9 @@
     "interop",
     "junit",
     "lcov",
+    "macOS",
+    "npmjs",
+    "npmrc",
     "postci",
     "prettierrc",
     "tacklind"

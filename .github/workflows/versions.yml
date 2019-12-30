@@ -1,0 +1,39 @@
+name: Test All Versions
+
+on:
+  push:
+  pull_request:
+  repository_dispatch:
+  schedule:
+    # Daily at 4:00am PST
+    - cron: 0 12 * * *
+
+jobs:
+  test-matrix:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        node: ['0.10', '0.12', 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] # Does not work on pre 1.0 versions.
+
+    runs-on: ${{ matrix.os }}
+
+    name: Node ${{ matrix.node }} on ${{ matrix.os }}
+
+    steps:
+      - name: Checkout latest code
+        uses: actions/checkout@v1
+
+      - name: Install Node ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: 'Debug: Node version'
+        run: node --version
+
+      - name: Build
+        run: yarn install
+
+      - name: Test
+        run: yarn checks --ci
