@@ -32,8 +32,19 @@ jobs:
       - name: 'Debug: Node version'
         run: node --version
 
-      - name: Build
-        run: npm install jest jest-junit ts-jest
+      - name: Install Needed Dependencies
+        run: npm install jest jest-junit ts-jest prettier
 
-      - name: Test
-        run: yarn checks --ci
+      - name: Install Spellchecker
+        if: matrix.node >= 10
+        run: npm install cspell
+
+      - name: Test Spelling
+        if: matrix.node >= 10
+        run: yarn spellcheck
+
+      - name: Test Formatting
+        run: yarn format-check
+
+      - name: Test Code
+        run: yarn test --ci
