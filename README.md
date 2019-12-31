@@ -11,6 +11,8 @@ No non-dev dependencies.
 
 ```bash
 yarn add smallest-power-of-two
+# Alternatively, install from Github directly
+yarn add cinderblock/smallest-power-of-two
 ```
 
 ```js
