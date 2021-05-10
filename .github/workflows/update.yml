@@ -134,7 +134,7 @@ jobs:
           git config user.name GitHub Actions
 
       - name: Bump Version
-        run: yarn version --patch
+        run: yarn version --patch --ignore-scripts
 
       - name: Push
         run: git push --tags --atomic origin master
