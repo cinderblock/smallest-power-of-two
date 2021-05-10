@@ -7,8 +7,8 @@ on:
   pull_request:
   repository_dispatch:
   schedule:
-    # Daily at 4:00am PST
-    - cron: 0 12 * * *
+    # Saturdays at 4:00am PST
+    - cron: 0 12 * * 6
 
 jobs:
   test-matrix:
