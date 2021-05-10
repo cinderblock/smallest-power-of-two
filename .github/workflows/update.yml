@@ -100,7 +100,7 @@ jobs:
 
         # Install dependencies and Build
       - name: Install dependencies and Build (using `yarn install --frozen-lockfile`)
-        run: yarn install --frozen-lockfile
+        run: npm install jest jest-junit ts-jest prettier typescript @types/jest --frozen-lockfile
 
       - name: 'Info: Show differences'
         run: git diff --color=always
