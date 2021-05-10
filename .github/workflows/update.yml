@@ -140,4 +140,4 @@ jobs:
         run: git push --tags --atomic origin master
 
       - name: Cleanup
-        run: git branch -d origin/npm-check-updates
+        run: git push origin --delete npm-check-updates
