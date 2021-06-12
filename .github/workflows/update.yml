@@ -141,3 +141,6 @@ jobs:
 
       - name: Cleanup
         run: git push origin --delete npm-check-updates
+
+      - name: Publish
+        run: npm publish
