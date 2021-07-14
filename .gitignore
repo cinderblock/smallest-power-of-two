@@ -9,3 +9,6 @@ node_modules/
 # Generated test reports
 /coverage
 /junit.xml
+
+# Packed versions
+/smallest-power-of-two-*.*.*.tgz
