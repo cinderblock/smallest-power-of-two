@@ -148,6 +148,6 @@ jobs:
           echo always-auth=true >> .npmrc
 
       - name: Publish
-        run: npm publish
+        run: npm --verbose publish
         env:
           NPM_TOKEN: ${{ secrets.npm_token }}
