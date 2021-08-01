@@ -1,0 +1,65 @@
+name: Publish with a manual trigger
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-matrix:
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        node: [10, 11, 12, 13, 14, 15, 16] # There are problems on various architectures on lower versions that are more work to fix. Please open an issue if you need more version support
+
+    runs-on: ${{ matrix.os }}
+
+    name: Test with Node ${{ matrix.node }} on ${{ matrix.os }}
+
+    steps:
+      - name: Enable color for Npm output
+        run: echo color = always >> .npmrc
+
+      - name: Checkout latest code
+        uses: actions/checkout@v2
+
+      - name: Install Node ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: 'Debug: Node version'
+        run: node --version
+
+        # Install dependencies and Build
+      - name: Install dependencies and Build (using `yarn install --frozen-lockfile`)
+        run: npm install jest jest-junit ts-jest prettier typescript @types/jest --frozen-lockfile
+
+      - name: 'Info: Show differences'
+        run: git diff --color=always
+
+      - name: Test Code
+        run: yarn test --ci
+
+  publish:
+    name: 'Publish latest'
+
+    needs: test-matrix
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Enable color for Npm output
+        run: echo color = always >> .npmrc
+
+      - name: Checkout latest code
+        uses: actions/checkout@v2
+
+      - name: Add email to npm
+        run: |
+          echo email=cameron@tacklind.com >> .npmrc
+          echo always-auth=true >> .npmrc
+
+      - name: Publish
+        run: npm --verbose publish
+        env:
+          NPM_TOKEN: ${{ secrets.npm_token }}
