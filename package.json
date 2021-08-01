@@ -1,6 +1,6 @@
 {
   "name": "smallest-power-of-two",
-  "version": "1.1.15",
+  "version": "1.1.16",
   "description": "Find the smallest power of 2 with magnitude greater than or equal to input unless 0",
   "main": "src/smallest-power-of-two",
   "types": "src/smallest-power-of-two.d.ts",
