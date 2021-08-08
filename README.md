@@ -10,9 +10,11 @@ No non-dev dependencies.
 ## Usage
 
 ```bash
+npm install --save smallest-power-of-two
+# Or yarn
 yarn add smallest-power-of-two
 # Alternatively, install from Github directly
-yarn add cinderblock/smallest-power-of-two
+npm install --save cinderblock/smallest-power-of-two
 ```
 
 ```js
@@ -39,13 +41,13 @@ smallestPowerOfTwo(-5); // -8
 Assumes VS Code. Insignificant errors if not.
 
 ```bash
-yarn setup
+npm i
 ```
 
 ### Testing
 
 ```bash
-yarn test
+npm test
 ```
 
 This will run the jest test suite.
@@ -55,7 +57,7 @@ This will run the jest test suite.
 Ensure code is formatted with our style.
 
 ```bash
-yarn format
+npm run format
 ```
 
 This is generally unnecessary with "Format On Save" features of most editors.
@@ -66,18 +68,18 @@ VS Code should work immediately.
 Start a repl with functions `smallestPowerOfTwo` loaded into the running context.
 
 ```bash
-yarn repl
+npm run repl
 ```
 
 ### Versioning and Publishing
 
-Just run any single npm/yarn version command.
+Just run any single `npm`/`yarn` version command.
 
 ```bash
 # Any of these work. Other variations work too.
+npm version major
 yarn version
 yarn version --minor
-npm version major
 ```
 
 This will automatically run prettier and tests, ensure git worktree is clean, update version number, git commit and tag, build, publish, and git push to origin in a single command.
@@ -89,5 +91,5 @@ Done automatically before publishing.
 Useful for finding bugs in code before committing.
 
 ```bash
-yarn build
+npm run build
 ```

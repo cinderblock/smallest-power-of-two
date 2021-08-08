@@ -30,13 +30,13 @@ jobs:
 
         # Update all dependencies
       - name: 'Update dependencies'
-        run: npx npm-check-updates -u --packageManager yarn
+        run: npx npm-check-updates -u
         env:
           FORCE_COLOR: 1
 
         # Install dependencies and Build
-      - name: Install dependencies and Build (using `yarn install`)
-        run: yarn install
+      - name: Install dependencies and Build (using `npm install`)
+        run: npm install
 
       - name: 'Info: Show differences'
         run: git diff --color=always
@@ -53,7 +53,7 @@ jobs:
         run: git checkout -b npm-check-updates
 
       - name: Add expected file changes
-        run: git add package.json yarn.lock
+        run: git add package.json package-lock.json
 
       - name: Set Author
         run: |
@@ -100,14 +100,14 @@ jobs:
         run: node --version
 
         # Install dependencies and Build
-      - name: Install dependencies and Build (using `yarn install --frozen-lockfile`)
-        run: npm install jest jest-junit ts-jest prettier typescript @types/jest --frozen-lockfile
+      - name: Install dependencies and Build (using `npm ci`)
+        run: npm ci
 
       - name: 'Info: Show differences'
         run: git diff --color=always
 
       - name: Test Code
-        run: yarn test --ci
+        run: npm test -- --ci
 
   merge:
     name: 'Merge updates into master'

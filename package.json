@@ -9,17 +9,17 @@
     "format": "prettier --write \"**/*.@(ts|js?(on)|md|prettierrc|clang-format|yml)\"",
     "format-check": "prettier --list-different \"**/*.@(ts|js?(on)|md|prettierrc|clang-format|yml)\"",
     "spellcheck": "cspell \".*/**\" \"**\"",
-    "checks": "yarn format-check && yarn spellcheck && yarn test",
+    "checks": "npm run format-check && npm run spellcheck && npm run test",
     "clean": "rm -f src/smallest-power-of-two.js src/smallest-power-of-two.d.ts",
     "test": "jest",
-    "preversion": "yarn checks",
+    "preversion": "npm run checks",
     "build": "tsc --declaration",
-    "ci": "yarn checks --ci --coverage",
-    "postci": "yarn coveralls",
+    "ci": "npm run checks --ci --coverage",
+    "postci": "npm run coveralls",
     "coveralls": "coveralls < coverage/lcov.info",
-    "setup": "yarn install --dev",
+    "setup": "npm install",
     "postsetup": "install-vscode-extensions",
-    "prepare": "yarn build"
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -52,10 +52,10 @@
     "install-vscode-extensions": "^1.0.0",
     "jest": "^27.0.6",
     "jest-junit": "^12.2.0",
+    "npm": "^7.20.5",
     "prettier": "^2.3.2",
     "ts-jest": "^27.0.4",
     "ts-node": "^10.1.0",
-    "typescript": "^4.3.5",
-    "yarn": "^1.22.11"
+    "typescript": "^4.3.5"
   }
 }

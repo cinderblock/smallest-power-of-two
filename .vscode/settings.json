@@ -4,6 +4,7 @@
     "coverage/": true,
     "junit.xml": true,
     "yarn.lock": true,
+    "package-lock.json": true,
     "src/smallest-power-of-two.js": true,
     "src/smallest-power-of-two.d.ts": true
   },

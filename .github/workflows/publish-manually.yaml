@@ -31,14 +31,14 @@ jobs:
         run: node --version
 
         # Install dependencies and Build
-      - name: Install dependencies and Build (using `yarn install --frozen-lockfile`)
-        run: npm install jest jest-junit ts-jest prettier typescript @types/jest --frozen-lockfile
+      - name: Install dependencies and Build (using `npm ci`)
+        run: npm ci
 
       - name: 'Info: Show differences'
         run: git diff --color=always
 
       - name: Test Code
-        run: yarn test --ci
+        run: npm test --ci
 
   publish:
     name: 'Publish latest'

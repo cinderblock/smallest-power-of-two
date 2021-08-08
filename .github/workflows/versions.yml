@@ -38,4 +38,4 @@ jobs:
         run: npm install jest jest-junit ts-jest typescript @types/jest
 
       - name: Test Code
-        run: yarn test --ci
+        run: npm test -- --ci
