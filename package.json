@@ -19,7 +19,7 @@
     "coveralls": "coveralls < coverage/lcov.info",
     "setup": "npx npm@7 install && husky install",
     "postsetup": "install-vscode-extensions",
-    "prepare": "npm run build"
+    "prepack": "npm run build"
   },
   "repository": {
     "type": "git",
