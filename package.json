@@ -17,7 +17,7 @@
     "ci": "npm run checks -- --ci --coverage",
     "postci": "npm run coveralls",
     "coveralls": "coveralls < coverage/lcov.info",
-    "setup": "npm install",
+    "setup": "npm install && husky install",
     "postsetup": "install-vscode-extensions",
     "prepare": "npm run build"
   },

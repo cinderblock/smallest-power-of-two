@@ -1,0 +1,1 @@
+npx --no-install cspell .git/COMMIT_EDITMSG
