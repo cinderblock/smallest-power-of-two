@@ -31,6 +31,7 @@ overrides:
       no-undef: warn
       padded-blocks: warn
       '@typescript-eslint/no-unused-vars': 'off'
+      prettier/prettier: off
 
     parserOptions:
       ecmaFeatures:
