@@ -7,11 +7,11 @@
     "yarn.lock": true,
     "package-lock.json": true,
     "src/smallest-power-of-two.js": true,
-    "src/smallest-power-of-two.d.ts": true
+    "src/smallest-power-of-two.d.ts": true,
   },
   "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "[yaml]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[yaml]": {
     "editor.formatOnSave": true,
   },
   "[json]": {
@@ -22,5 +22,5 @@
   },
   "[markdown]": {
     "editor.formatOnSave": true,
-  }
+  },
 }

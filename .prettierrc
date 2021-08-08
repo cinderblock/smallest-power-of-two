@@ -5,8 +5,12 @@
   "endOfLine": "auto",
   "overrides": [
     {
-      "files": ".prettierrc",
-      "options": { "parser": "json" }
-    }
-  ]
+      "files": [".vscode/*", ".prettierrc", "tsconfig.json"],
+      "options": {
+        "parser": "json5",
+        "singleQuote": false,
+        "quoteProps": "preserve",
+      },
+    },
+  ],
 }
