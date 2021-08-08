@@ -93,3 +93,10 @@ Useful for finding bugs in code before committing.
 ```bash
 npm run build
 ```
+
+## Changelog
+
+### v1.2.0
+
+- Export modules
+- Npm@7
