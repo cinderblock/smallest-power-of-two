@@ -6,13 +6,15 @@ on:
 jobs:
   info:
     runs-on: ubuntu-latest
+    name: Workflow Info
+
     steps:
       - name: 'Info: branch (`$GITHUB_REF`) that we\'re checking out'
         run: echo $GITHUB_REF
 
   test-matrix:
     needs: info
-    
+
     strategy:
       fail-fast: true
       matrix:
