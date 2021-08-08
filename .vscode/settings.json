@@ -11,6 +11,14 @@
   },
   "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "json.schemas": [
+    {
+      "fileMatch": [".prettierrc"],
+      "schema": {
+        "allowTrailingCommas": true,
+      },
+    },
+  ],
   "[yaml]": {
     "editor.formatOnSave": true,
   },
