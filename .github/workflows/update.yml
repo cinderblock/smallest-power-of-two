@@ -144,9 +144,7 @@ jobs:
         run: git push origin --delete npm-check-updates
 
       - name: Add email to npm
-        run: |
-          echo email=cameron@tacklind.com >> .npmrc
-          echo always-auth=true >> .npmrc
+        run: echo email=cameron@tacklind.com >> .npmrc
 
       - name: Publish
         run: npx npm@7 --verbose publish
