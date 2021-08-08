@@ -21,6 +21,7 @@
   "ignorePaths": [
     "**/coverage/**",
     "**/node_modules/**",
+    "/.husky/_/**",
     "**/yarn.lock",
     "**/package-lock.json",
     "**/src/smallest-power-of-two.d.ts",
