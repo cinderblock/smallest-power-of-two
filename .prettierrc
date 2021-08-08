@@ -1,5 +1,12 @@
 {
   "singleQuote": true,
   "arrowParens": "avoid",
-  "trailingComma": "all"
+  "trailingComma": "all",
+  "endOfLine": "auto",
+  "overrides": [
+    {
+      "files": ".prettierrc",
+      "options": { "parser": "json" }
+    }
+  ]
 }
