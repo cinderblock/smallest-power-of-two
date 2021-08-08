@@ -8,5 +8,18 @@
     "src/smallest-power-of-two.js": true,
     "src/smallest-power-of-two.d.ts": true
   },
-  "editor.formatOnSave": true
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[yaml]": {
+    "editor.formatOnSave": true,
+  },
+  "[json]": {
+    "editor.formatOnSave": true,
+  },
+  "[jsonc]": {
+    "editor.formatOnSave": true,
+  },
+  "[markdown]": {
+    "editor.formatOnSave": true,
+  }
 }

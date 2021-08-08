@@ -18,7 +18,7 @@ npm install --save cinderblock/smallest-power-of-two
 ```
 
 ```js
-const smallestPowerOfTwo = require('smallest-power-of-two').default;
+// const smallestPowerOfTwo = require('smallest-power-of-two').default;
 import smallestPowerOfTwo from 'smallest-power-of-two';
 
 smallestPowerOfTwo(1); // 1

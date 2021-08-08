@@ -1,9 +1,8 @@
 {
   "recommendations": [
-    // spell-checker: disable
     "esbenp.prettier-vscode",
     "editorconfig.editorconfig",
-    "ryanluker.vscode-coverage-gutters"
-    // spell-checker: enable
+    "ryanluker.vscode-coverage-gutters",
+    "dbaeumer.vscode-eslint"
   ]
 }

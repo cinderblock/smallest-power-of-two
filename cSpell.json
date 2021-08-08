@@ -4,7 +4,9 @@
   "words": [
     "cinderblock",
     "circleci",
+    "dbaeumer",
     "dependabot",
+    "esbenp",
     "interop",
     "junit",
     "lcov",
@@ -13,6 +15,7 @@
     "npmrc",
     "postci",
     "prettierrc",
+    "ryanluker",
     "tacklind"
   ],
   "ignorePaths": [
