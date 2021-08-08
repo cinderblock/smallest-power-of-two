@@ -25,14 +25,14 @@ test('Called with no arguments', () => {
 ].forEach(([input, output, msg]) =>
   test(<string>msg || input + ' => ' + output, () => {
     expect(smallestPowerOfTwo(input as number)).toEqual(output);
-  })
+  }),
 );
 
 ['test', true, null, {}, [], undefined, Symbol()].forEach(v =>
   test('Called with invalid argument: ' + typeof v, () => {
     const f = smallestPowerOfTwo as (f: any) => number;
     expect(() => f(v)).toThrowError(TypeError('Invalid type: ' + typeof v));
-  })
+  }),
 );
 
 // Tests start to fail past 2 ** 53
