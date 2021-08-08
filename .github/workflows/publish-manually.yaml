@@ -4,7 +4,15 @@ on:
   workflow_dispatch:
 
 jobs:
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Info: branch (`$GITHUB_REF`) that we're checking out'
+        run: echo $GITHUB_REF
+
   test-matrix:
+    needs: info
+    
     strategy:
       fail-fast: true
       matrix:
@@ -41,7 +49,7 @@ jobs:
         run: npm test --ci
 
   publish:
-    name: 'Publish latest'
+    name: 'Publish specified branch'
 
     needs: test-matrix
 
