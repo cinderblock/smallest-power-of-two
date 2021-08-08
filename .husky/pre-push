@@ -1,1 +1,1 @@
-npm run checks
+npx npm@7 run checks

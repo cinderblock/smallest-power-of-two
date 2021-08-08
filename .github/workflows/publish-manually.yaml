@@ -42,13 +42,13 @@ jobs:
 
         # Install dependencies and Build
       - name: Install dependencies and Build (using `npm ci`)
-        run: npm ci
+        run: npx npm@7 ci
 
       - name: 'Info: Show differences'
         run: git diff --color=always
 
       - name: Test Code
-        run: npm test --ci
+        run: npx npm@7 test --ci
 
   publish:
     name: 'Publish specified branch'

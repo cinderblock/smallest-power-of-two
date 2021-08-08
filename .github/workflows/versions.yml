@@ -35,7 +35,7 @@ jobs:
         run: node --version
 
       - name: Install dependencies needed for tests
-        run: npm install jest jest-junit ts-jest typescript @types/jest
+        run: npx npm@7 install jest jest-junit ts-jest typescript @types/jest
 
       - name: Test Code
-        run: npm test -- --ci
+        run: npx npm@7 test -- --ci

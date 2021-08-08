@@ -17,7 +17,7 @@
     "ci": "npm run checks -- --ci --coverage",
     "postci": "npm run coveralls",
     "coveralls": "coveralls < coverage/lcov.info",
-    "setup": "npm install && husky install",
+    "setup": "npx npm@7 install && husky install",
     "postsetup": "install-vscode-extensions",
     "prepare": "npm run build"
   },
@@ -37,6 +37,9 @@
     "src/smallest-power-of-two.js",
     "src/smallest-power-of-two.d.ts"
   ],
+  "engines": {
+    "npm": ">=7"
+  },
   "author": "Cameron Tacklind <cameron@tacklind.com>",
   "license": "ISC",
   "bugs": {

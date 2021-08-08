@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Install Node dependencies without building locally
-        run: npm install
+        run: npx npm@7 install
 
       - name: 'Debug: List post build files'
         run: find * \( -path node_modules -o -path .git \) -print -prune -o -type f -print | tee /tmp/build.list
@@ -29,7 +29,7 @@ jobs:
 
       - name: Install Current Version as Git Dependency
         working-directory: tests
-        run: npm install ${{ github.repository }}#${{ github.sha }}
+        run: npx npm@7 install ${{ github.repository }}#${{ github.sha }}
 
       - name: 'Debug: List Dependency Folder Contents'
         working-directory: tests
@@ -38,7 +38,7 @@ jobs:
       # Ensure the code works
 
       - name: Run Tests with Prepared Git Dependency
-        run: npm test
+        run: npx npm@7 test
         env:
           TEST_IMPORT_OVERRIDE: smallest-power-of-two
 
@@ -52,10 +52,10 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Build
-        run: npm install
+        run: npx npm@7 install
 
       - name: Prettier
-        run: npm run format-check
+        run: npx npm@7 run format-check
 
   check-spelling:
     name: Check - Spelling
@@ -67,10 +67,10 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Build
-        run: npm install
+        run: npx npm@7 install
 
       - name: Spelling
-        run: npm run spellcheck
+        run: npx npm@7 run spellcheck
 
   test-coverage:
     needs: [test-install-and-run-from-git, check-spelling, check-format]
@@ -87,13 +87,13 @@ jobs:
         run: node --version
 
       - name: Build
-        run: npm install
+        run: npx npm@7 install
 
       - name: 'Debug: List post build files'
         run: find * \( -path node_modules -o -path .git \) -print -prune -o -type f -print | tee /tmp/build.list
 
       - name: Test with Coverage
-        run: npm test -- --coverage
+        run: npx npm@7 test -- --coverage
 
       - name: 'Debug: List post Coverage files'
         run: find * \( -path node_modules -o -path .git \) -print -prune -o -type f -print | tee /tmp/coverage.list
@@ -120,6 +120,6 @@ jobs:
         run: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' >> .npmrc
 
       - name: Publish to npm
-        run: npm publish
+        run: npx npm@7 publish
         env:
           NPM_TOKEN: ${{ secrets.npm_token }}
