@@ -117,7 +117,7 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Create .npmrc with Auth Token
-        run: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
+        run: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' >> .npmrc
 
       - name: Publish to npm
         run: npm publish
