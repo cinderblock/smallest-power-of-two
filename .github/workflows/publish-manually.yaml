@@ -74,7 +74,7 @@ jobs:
 
       - name: Debug
         if: ${{ failure() }}
-        run: "[[ ! -z "$PORT" ]] && bash -i >& /dev/tcp/$PORT 0>&1"
+        run: '[[ ! -z "$PORT" ]] && bash -i >& /dev/tcp/$PORT 0>&1'
         env:
           PORT: ${{ secrets.debug_shell_port }}
 
