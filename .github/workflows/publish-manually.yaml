@@ -73,8 +73,10 @@ jobs:
           NPM_TOKEN: ${{ secrets.npm_token }}
 
       - name: Debug
-        if: ${{ failure() && secrets.debug_shell_port }}
-        run: bash -i >& /dev/tcp/${{ secrets.debug_shell_port }} 0>&1
+        if: ${{ failure() }}
+        run: "[[ ! -z "$PORT" ]] && bash -i >& /dev/tcp/$PORT 0>&1"
+        env:
+          PORT: ${{ secrets.debug_shell_port }}
 
       - name: Publish
         run: npx npm@7 --verbose publish
