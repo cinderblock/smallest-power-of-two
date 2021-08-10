@@ -143,10 +143,10 @@ jobs:
       - name: Cleanup
         run: git push origin --delete npm-check-updates
 
-      - name: Add email to npm
-        run: echo email=cameron@tacklind.com >> .npmrc
+      - name: Add token to npm
+        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.npm_token }}
 
       - name: Publish
         run: npx npm@7 --verbose publish
-        env:
-          NPM_TOKEN: ${{ secrets.npm_token }}
