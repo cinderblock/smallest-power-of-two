@@ -69,7 +69,7 @@ jobs:
       - name: Push to GitHub
         run: git push origin npm-check-updates --force
 
-  test-matrix:
+  test-all:
     strategy:
       fail-fast: false
       matrix:
@@ -112,7 +112,7 @@ jobs:
   merge:
     name: 'Merge updates into master'
 
-    needs: test-matrix
+    needs: test-all
 
     runs-on: ubuntu-latest
 

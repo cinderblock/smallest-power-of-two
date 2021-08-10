@@ -12,7 +12,7 @@ jobs:
       - name: "Info: branch (`$GITHUB_REF`) that we're checking out"
         run: echo $GITHUB_REF
 
-  test-matrix:
+  test-all:
     needs: info
 
     strategy:
@@ -53,7 +53,7 @@ jobs:
   publish:
     name: 'Publish specified branch'
 
-    needs: test-matrix
+    needs: test-all
 
     runs-on: ubuntu-latest
 
