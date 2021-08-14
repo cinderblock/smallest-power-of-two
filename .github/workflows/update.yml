@@ -14,7 +14,7 @@ jobs:
     name: Update Dependencies
     steps:
       - name: Enable color for Npm output
-        run: echo color = always >> .npmrc
+        run: echo color = always >> ~/.npmrc
 
       - name: Checkout latest code
         uses: actions/checkout@v2
@@ -84,7 +84,7 @@ jobs:
 
     steps:
       - name: Enable color for Npm output
-        run: echo color = always >> .npmrc
+        run: echo color = always >> ~/.npmrc
 
       - name: Checkout latest code
         uses: actions/checkout@v2
@@ -118,7 +118,7 @@ jobs:
 
     steps:
       - name: Enable color for Npm output
-        run: echo color = always >> .npmrc
+        run: echo color = always >> ~/.npmrc
 
       - name: Checkout latest code
         uses: actions/checkout@v2
@@ -144,7 +144,7 @@ jobs:
         run: git push origin --delete npm-check-updates
 
       - name: Add token to npm
-        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
         env:
           NPM_TOKEN: ${{ secrets.npm_token }}
 
