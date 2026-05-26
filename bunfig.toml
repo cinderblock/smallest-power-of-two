@@ -1,0 +1,3 @@
+# Only run tests in src/ — never anything emitted into dist/.
+[test]
+root = "src"

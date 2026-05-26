@@ -1,102 +1,50 @@
 # smallest-power-of-two
 
-[![](https://github.com/cinderblock/smallest-power-of-two/workflows/Main/badge.svg) ![](https://github.com/cinderblock/smallest-power-of-two/workflows/Test%20All%20Versions/badge.svg)](https://github.com/cinderblock/smallest-power-of-two/actions)
-[![Coverage Status](https://coveralls.io/repos/github/cinderblock/smallest-power-of-two/badge.svg?branch=master)](https://coveralls.io/github/cinderblock/smallest-power-of-two?branch=master)
+[![npm](https://img.shields.io/npm/v/smallest-power-of-two.svg)](https://www.npmjs.com/package/smallest-power-of-two)
+[![CI](https://github.com/cinderblock/smallest-power-of-two/actions/workflows/ci.yml/badge.svg)](https://github.com/cinderblock/smallest-power-of-two/actions/workflows/ci.yml)
 
-Simple library to find the smallest power of 2 with magnitude greater than or equal to input, unless 0.
+Find the smallest power of 2 with magnitude greater than or equal to the input. Zero runtime dependencies, ESM, TypeScript types.
 
-No non-dev dependencies.
+## Install
+
+```bash
+npm install smallest-power-of-two
+```
 
 ## Usage
 
-```bash
-npm install --save smallest-power-of-two
-# Or yarn
-yarn add smallest-power-of-two
-# Alternatively, install from Github directly
-npm install --save cinderblock/smallest-power-of-two
-```
-
-```js
-// const smallestPowerOfTwo = require('smallest-power-of-two').default;
+```ts
 import smallestPowerOfTwo from 'smallest-power-of-two';
 
-smallestPowerOfTwo(1); // 1
-smallestPowerOfTwo(2); // 2
-smallestPowerOfTwo(3); // 4
-smallestPowerOfTwo(4); // 4
-smallestPowerOfTwo(5); // 8
+smallestPowerOfTwo(1);   // 1
+smallestPowerOfTwo(2);   // 2
+smallestPowerOfTwo(3);   // 4
+smallestPowerOfTwo(5);   // 8
+smallestPowerOfTwo(124); // 128
 
-// 0 is special
-smallestPowerOfTwo(0); // 0
+smallestPowerOfTwo(0);   // 0 — special case
 
-// Negative numbers work too!
-smallestPowerOfTwo(-5); // -8
+smallestPowerOfTwo(-5);  // -8 — negatives work too
+
+smallestPowerOfTwo(1.1); // 2 — non-integers are ceil()'d first
 ```
 
-## Development
+## API
 
-### Setup
-
-Assumes VS Code. Insignificant errors if not.
-
-```bash
-npm i
+```ts
+function smallestPowerOfTwo(lowerBound: number): number;
 ```
 
-### Testing
+- Returns `0` for input `0` (and `-0`).
+- Returns the smallest power of two `>= lowerBound` for positive inputs.
+- For negatives, returns `-smallestPowerOfTwo(-lowerBound)`.
+- Throws `TypeError` for non-numbers.
+- Accuracy bounded by `Number.MAX_SAFE_INTEGER`; inputs beyond `2^53` may saturate.
 
-```bash
-npm test
-```
+## v2.0.0 — breaking change vs v1
 
-This will run the jest test suite.
+v2 is **ESM only** (`"type": "module"`, `"exports"` field). If you need CommonJS interop, stay on v1.2.7. The function shape and behavior are unchanged.
 
-### Formatting
+## License
 
-Ensure code is formatted with our style.
-
-```bash
-npm run format
-```
-
-This is generally unnecessary with "Format On Save" features of most editors.
-VS Code should work immediately.
-
-#### REPL
-
-Start a repl with functions `smallestPowerOfTwo` loaded into the running context.
-
-```bash
-npm run repl
-```
-
-### Versioning and Publishing
-
-Just run any single `npm`/`yarn` version command.
-
-```bash
-# Any of these work. Other variations work too.
-npm version major
-yarn version
-yarn version --minor
-```
-
-This will automatically run prettier and tests, ensure git worktree is clean, update version number, git commit and tag, build, publish, and git push to origin in a single command.
-
-### Build
-
-Build ES3 and `.d.ts` files from source.
-Done automatically before publishing.
-Useful for finding bugs in code before committing.
-
-```bash
-npm run build
-```
-
-## Changelog
-
-### v1.2.0
-
-- Export modules
-- Npm@7
+ISC — see [LICENSE](./LICENSE).

@@ -1,14 +1,4 @@
-# Dependency directories
 node_modules/
-.venv/
-
-# Generated files
-/src/smallest-power-of-two.js
-/src/smallest-power-of-two.d.ts
-
-# Generated test reports
-/coverage
-/junit.xml
-
-# Packed versions
-/smallest-power-of-two-*.*.*.tgz
+/dist/
+*.tgz
+.bun/
