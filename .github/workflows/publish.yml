@@ -20,7 +20,7 @@ jobs:
       # `npm publish --provenance` requires npm CLI 11.5.1+ for npm Trusted
       # Publishing OIDC. bun publish doesn't yet support provenance, so we
       # use bun for install/test and npm for the publish step itself.
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: '22'
       - run: npm install -g npm@latest
